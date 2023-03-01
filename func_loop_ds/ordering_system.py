@@ -25,8 +25,13 @@ def calculate_subtotal(order):
     """
     print('Calculating bill subtotal...')
     ### WRITE SOLUTION HERE
-
-    raise NotImplementedError()
+    prices=[]
+    prices=[item['price'] for item in order]
+    float=0
+    for i in prices:
+        float+=i
+    return float
+    #raise NotImplementedError()
 
 def calculate_tax(subtotal):
     """ Calculates the tax of an order
@@ -42,8 +47,10 @@ def calculate_tax(subtotal):
     """
     print('Calculating tax from subtotal...')
     ### WRITE SOLUTION HERE
-
-    raise NotImplementedError()
+    subtotal*=0.15
+    float=round(subtotal,2)
+    return float
+    #raise NotImplementedError()
 
 def summarize_order(order):
     """ Summarizes the order
@@ -62,13 +69,16 @@ def summarize_order(order):
         return names, total
 
     """
-    print_order(order)
+    #print_order(order)
     ### WRITE SOLUTION HERE
-
-    raise NotImplementedError()
+    total=round((subtotal+tax),2)
+    names=(items)
+    return names , total
+    #raise NotImplementedError()
 
 # This function is provided for you, and will print out the items in an order
 def print_order(order):
+    global items
     print('You have ordered ' + str(len(order)) + ' items')
     items = []
     items = [item["name"] for item in order]
@@ -98,16 +108,18 @@ Here are some sample function calls to help you test your implementations.
 Feel free to change, uncomment, and add these as you wish.
 '''
 def main():
+    global subtotal
+    global tax
     order = take_order()
     print_order(order)
 
-    # subtotal = calculate_subtotal(order)
-    # print("Subtotal for the order is: " + str(subtotal))
+    subtotal = calculate_subtotal(order)
+    print("Subtotal for the order is: " + str(subtotal))
 
-    # tax = calculate_tax(subtotal)
-    # print("Tax for the order is: " + str(tax))
+    tax = calculate_tax(subtotal)
+    print("Tax for the order is: " + str(tax))
 
-    # items, subtotal = summarize_order(order)
+    items, subtotal = summarize_order(order)
 
 if __name__ == "__main__":
     main()
