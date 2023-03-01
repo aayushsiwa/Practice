@@ -24,16 +24,9 @@ def calculate_subtotal(order):
         float = The sum of the prices of the items in the order
     """
     print('Calculating bill subtotal...')
-    global float
-    prices=[]
-    prices=[item["price"] for item in order]
-    print(prices)
-    float=0
-    for i in prices:
-        float+=i
-    return float
+    ### WRITE SOLUTION HERE
 
-    #raise NotImplementedError()
+    raise NotImplementedError()
 
 def calculate_tax(subtotal):
     """ Calculates the tax of an order
@@ -49,11 +42,8 @@ def calculate_tax(subtotal):
     """
     print('Calculating tax from subtotal...')
     ### WRITE SOLUTION HERE
-    global sub
-    subtotal*=0.15
-    sub=round(subtotal,2)
-    return sub
-    #raise NotImplementedError()
+
+    raise NotImplementedError()
 
 def summarize_order(order):
     """ Summarizes the order
@@ -74,9 +64,8 @@ def summarize_order(order):
     """
     print_order(order)
     ### WRITE SOLUTION HERE
-    total = (round((sub+float),2))
-    return order, total
-    #raise NotImplementedError()
+
+    raise NotImplementedError()
 
 # This function is provided for you, and will print out the items in an order
 def print_order(order):
@@ -112,13 +101,13 @@ def main():
     order = take_order()
     print_order(order)
 
-    subtotal = calculate_subtotal(order)
-    print("Subtotal for the order is: " + str(subtotal))
+    # subtotal = calculate_subtotal(order)
+    # print("Subtotal for the order is: " + str(subtotal))
 
-    tax = calculate_tax(subtotal)
-    print("Tax for the order is: " + str(tax))
+    # tax = calculate_tax(subtotal)
+    # print("Tax for the order is: " + str(tax))
 
-    items, subtotal = order, summarize_order(order)
+    # items, subtotal = summarize_order(order)
 
 if __name__ == "__main__":
     main()
