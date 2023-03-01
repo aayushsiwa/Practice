@@ -59,8 +59,7 @@ def read_file_in_reverse(file_name):
     for i in range(len(l)):
         print(i)
         list.append(l[-(i+1)])
-    print(list)
-    return 0
+    return list
 
     raise NotImplementedError()
 
