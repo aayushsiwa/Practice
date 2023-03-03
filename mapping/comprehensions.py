@@ -28,14 +28,8 @@ def generate_usernames(mod_list):
 
 def map_id_to_initial(employee_list):
    ### WRITE SOLUTION CODE HERE
-   f=[]
-   d=[]
-   for i in employee_list:
-      n=i["name"]
-      f.append(n[:1])
-   for i in employee_list:
-      n=i["id"]
-      d.append(n)
+   f=[x["name"][:1] for x in employee_list]
+   d=[x["id"] for x in employee_list]
    dict={key:value for (key,value) in zip(f,d)}
    return dict
    raise NotImplementedError()
