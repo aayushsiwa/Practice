@@ -1,9 +1,10 @@
 class My:
-    a=5
-    print("asas")
-    def hello(self):
-        print("Hello World")
+    print("Who wrote this?")
+    index="Author-Book"
+    def hand_list(self, philosopher, book):
+        print(My.index)
+        print(f"{philosopher} wrote the book: {book}")
+
 
 myclass=My()
-print(myclass.a)
-print(myclass.hello())
+myclass.hand_list("Sun Tzu","The Art of War")
