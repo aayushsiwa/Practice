@@ -15,8 +15,9 @@ def mod(employee_list):
 
 def to_mod_list(employee_list):
    ### WRITE SOLUTION CODE HERE
-   list=map(mod,employee_list)
-   return list
+   l=list(map(mod,employee_list))
+   print(type(l))
+   return l
    raise NotImplementedError()
 
 def generate_usernames(mod_list):
