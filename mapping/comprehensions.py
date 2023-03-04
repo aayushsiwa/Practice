@@ -15,23 +15,19 @@ def mod(employee_list):
 
 def to_mod_list(employee_list):
    ### WRITE SOLUTION CODE HERE
-   l=list(map(mod,employee_list))
-   print(type(l))
-   return l
+   map_emp_list=list(map(mod,employee_list))
+   return map_emp_list
    raise NotImplementedError()
 
 def generate_usernames(mod_list):
    ### WRITE SOLUTION CODE HERE
-   list=map(mod,employee_list)
-   list=[x.replace(" ","_") for x in list]
-   return list
+   mod_emp_list=[x.replace(" ","_") for x in mod_list]
+   return mod_emp_list
    raise NotImplementedError()
 
 def map_id_to_initial(employee_list):
    ### WRITE SOLUTION CODE HERE
-   f=[x["name"][:1] for x in employee_list]
-   d=[x["id"] for x in employee_list]
-   dict={key:value for (key,value) in zip(f,d)}
+   dict={x["name"][0]:x["id"] for x in employee_list}
    return dict
    raise NotImplementedError()
 
